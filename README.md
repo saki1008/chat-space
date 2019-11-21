@@ -1,6 +1,10 @@
 # DB設計
 
+<<<<<<< HEAD
 ## users table
+=======
+## users table 
+>>>>>>> 3e1b275bcdf57f9e03a3b6411c1447f2e0f67c06
 
 |Column|Type|Options|
 |------|----|-------|
@@ -11,6 +15,7 @@
   - has.many :grops, through: menmbers
   - has.many :messages
   - has.many :members
+<<<<<<< HEAD
 
   ## groups_users table
 
@@ -52,3 +57,5 @@
 ### Association
 - belongs_to :post
 - belongs_to :user
+=======
+>>>>>>> 3e1b275bcdf57f9e03a3b6411c1447f2e0f67c06
