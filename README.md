@@ -6,52 +6,42 @@
 |------|----|-------|
 |name|string|index: true, null: false, unique: true|
 |mail|string|null: false|
-
  ### Association
   - has.many :grops, through: menmbers
   - has.many :messages
   - has.many :members
-<<<<<<< HEAD
 
-  ## groups_users table
+  ## groups table
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
+|name|string|index: true, null: false, unipue: true|
 ### Association
+ - has_many :users, through: :group_users
+ - has_many :group_users
+ - has_many :messages
+
+
+## message table
+
+|Column|type|Option|
+|------|----|------|
+|body| text | null: false |
+| image    | string  |  |
+| group | references | foreign_key: true |
+| user  | references | foreign_key: true |
+## Association
+- belongs_to :user
 - belongs_to :group
-- belongs_to :user
 
-## posts table
-|Column|Type|Options|
-|------|----|-------|
-|title|text|null: false|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- has_many :comments
-- has_many :posts_tags
-- has_many  :tags,  through:  :posts_tags
 
-## tags table
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-### Association
-- has_many :posts_tags
-- has_many  :posts,  through:  :posts_tags
 
-## comments table
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :post
-- belongs_to :user
-=======
->>>>>>> 3e1b275bcdf57f9e03a3b6411c1447f2e0f67c06
+## group_users table
+
+| Column    | type    | Option |
+|-----------|---------|--------|
+| group  | references | index: true, foreign_key: true, null: false |
+| user   | references | index: true, foreign_key: true, null: false |
+## Association
+* belongs_to :group
+* belongs_to :user
