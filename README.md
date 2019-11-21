@@ -7,9 +7,9 @@
 |name|string|index: true, null: false, unique: true|
 |mail|string|null: false|
  ### Association
-  - has.many :grops, through: menmbers
-  - has.many :messages
-  - has.many :members
+  - has_many :groups, through: members
+  - has_many :messages
+  - has_many :members
 
   ## groups table
 
@@ -26,7 +26,7 @@
 
 |Column|type|Option|
 |------|----|------|
-|body| text | null: false |
+|body| text |  |
 | image    | string  |  |
 | group | references | foreign_key: true |
 | user  | references | foreign_key: true |
