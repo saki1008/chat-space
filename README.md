@@ -1,10 +1,6 @@
 # DB設計
 
-<<<<<<< HEAD
 ## users table
-=======
-## users table 
->>>>>>> 3e1b275bcdf57f9e03a3b6411c1447f2e0f67c06
 
 |Column|Type|Options|
 |------|----|-------|
