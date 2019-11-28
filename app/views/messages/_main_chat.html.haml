@@ -1,0 +1,30 @@
+.chat-main
+  .main_header
+    .main_header__left-box
+      %h2.main-header__left-box__current-group
+        仏
+      %ul.main-header__leht-box__member-list
+        ギルド; 
+        %li.main-header__leht-box__member-list__menber
+          勇者, 魔法使い
+    = link_to "#" do
+      .main-header__edit-btn
+        Edit
+  .messages
+    .message
+      .message__upper-into
+        %p.message__upper-info__talker
+          一狩り行こうぜ
+        %p.message__upper-info__date
+          2019/11/26
+      %p.messges__text
+        宝箱
+  .form
+    %form
+      %input.form__message{type: 'text',placeholder: 'type a message'}
+        .form__mask
+          %label.form__mask__image
+            = icon('fa','image',class: 'icon')
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: 'submit', value: 'Send'}
+  
