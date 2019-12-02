@@ -2,15 +2,17 @@
   .main_header
     .main_header__left-box
       %h2.main_header__left-box__current-group
-        仏
+        = @group.name
       %ul.main_header__leht-box__member-list
-        ギルド; 
+        - @group.users.each do |user|
+          =user.name
         %li.main_header__leht-box__member-list__menber
-          勇者, 魔法使い
+          
     = link_to "#" do
       .main_header__edit-btn
-        Edit
+        = link_to "Edit", edit_group_path(params[:group_id]), method: :get
   .messages
+    = render @messages
     .message
       .messages__upper-into
         %p.messages__upper-info__talker
@@ -20,11 +22,11 @@
       %p.messages__text
         宝箱
   .form
-    %form
-      %input.form__message{type: 'text',placeholder: 'type a message'}
-        .form__mask
-          %label.form__mask__image
-            = icon('fa','image',class: 'icon')
-            %input.hidden{type: 'file'}
-        %input.form__submit{type: 'submit', value: 'Send'}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
   
