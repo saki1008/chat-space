@@ -13,14 +13,7 @@
         = link_to "Edit", edit_group_path(params[:group_id]), method: :get
   .messages
     = render @messages
-    .message
-      .messages__upper-into
-        %p.messages__upper-info__talker
-          一狩り行こうぜ
-        %p.messages__upper-info__date
-          2019/11/26
-      %p.messages__text
-        宝箱
+        
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
