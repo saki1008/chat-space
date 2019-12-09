@@ -70,7 +70,7 @@ $(function(){
   });
  }
 }
- setInterval(reloadMessages, 14000);
+ setInterval(reloadMessages, 4000);
 });
 
 
