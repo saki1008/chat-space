@@ -40,6 +40,9 @@
     display: flex;
     margin-bottom: 10px;
   }
+  .upper-message{
+    display: flex;
+  }
   .upper-message__user-name {
     color: #434a54;
     font-size: 16px;
@@ -54,6 +57,7 @@
   .lower-message{
     color: #434a54;
     font-size: 14px;
+    float: left;
     margin-bottom: 10px;
   }
  }
@@ -92,4 +96,8 @@
     padding: 0 30px;
   }
  }
+}
+.right-header__btn{
+  text-decoration: none;
+  color: #38aef0;
 }
